@@ -1,0 +1,228 @@
+    /* VARIABLES DE MARCA para fácil edición */
+    :root {
+      --color-verde-oscuro: rgb(44, 95, 45);
+      --color-verde-extra-oscuro: #1b3c1a;
+      --color-amarillo-dorado: gold;
+      --color-celeste-agua: #79bff8; /* Tono de celeste para enlaces/interactividad */
+      --color-fondo-claro: #f4f9f4;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      /* padding-top ajustado para que el contenido no quede debajo del nav fijo */
+      padding-top: 5em;
+      background-color: var(--color-fondo-claro);
+      color: #333;
+    }
+
+    /* --- ESTILOS DEL NAV SUPERIOR (ENCABEZADO) --- */
+    .encabezado {
+      position: fixed; /* Barra de navegación fija en la parte superior */
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--color-verde-oscuro);
+      padding: 0.5em 2em; /* Reducido para que el icono quepa mejor */
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+
+      /* Uso de Flexbox para alinear el icono a la izquierda y los enlaces a la derecha */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-home {
+      height: 28px; /* Tamaño del icono */
+      width: auto;
+      border-radius: 50%;
+      transition: opacity 0.3s;
+      /* Ajuste de margen para mejor estética en desktop */
+      margin-right: 3em;
+      /* Añadido un pequeño borde para que el icono destaque si tiene fondo claro */
+      border: 2px solid var(--color-amarillo-dorado);
+    }
+
+    .logo-home:hover {
+        opacity: 0.8;
+    }
+
+    .nav-links {
+        display: flex;
+        /* Espaciado ajustado para desktop */
+        gap: 2em;
+        /* Para asegurar que los enlaces se centren en el espacio restante si se desea, aunque space-between es mejor */
+        flex-grow: 1;
+        justify-content:center; /* Alinea los enlaces a la derecha */
+    }
+
+    .nav-links a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5em 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-celeste-agua); /* Celeste para el efecto hover (agua/cielo) */
+    }
+
+    /* --- ESTILOS DEL HEADER PRINCIPAL (FULL-SCREEN IMAGE) --- */
+    header {
+      /* Se mantiene la imagen de fondo full-screen */
+      background: url('https://i.imgur.com/dxxLUP6.jpeg') no-repeat center top/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      /* Oscurecer la imagen de fondo para mejor legibilidad del texto */
+      background-blend-mode: multiply;
+      background-color: rgba(0, 0, 0, 0.30); /* opacidad para el fondo */
+    }
+
+    header h1 {
+      font-family: Georgia;
+      color: var(--color-amarillo-dorado); /* Dorado/Amarillo aludiendo a la divinidad y el sol */
+      /* Sombra mejorada */
+      text-shadow: 0 0 7px var(--color-verde-extra-oscuro), 0 0 15px var(--color-verde-extra-oscuro);
+      background-color: rgba(44, 95, 45, 0.6); /* Sutil fondo semitransparente verde */
+      font-size: 3em;
+      margin: 0.2em 0;
+      padding: 0.2em 0.5em;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    header p {
+      color: white;
+      /* Sombra mejorada */
+      text-shadow: 0 0 3px #000, 0 0 5px #000;
+      background-color: rgba(255, 215, 0, 0.5); /* Fondo dorado semi-transparente para el subtítulo */
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      padding: 0.2em 0.5em;
+      display: inline-block;
+      border-radius: 5px;
+    }
+    .divisor {
+      background: linear-gradient(
+        to bottom,
+        gold 0%,
+
+        green 100%
+      );
+      text-align: center;
+    }
+    .divisor img {
+
+      width: 48px;
+    }
+    /* --- ESTILOS DE SECCIONES GENERALES --- */
+    section {
+      padding: 3em 2em;
+    }
+
+    section h2 {
+        text-align: center;
+        color: var(--color-verde-oscuro);
+        margin-bottom: 1.5em;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+    }
+
+    .feature {
+      flex: 1 1 300px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 1.5em;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-top: 5px solid var(--color-amarillo-dorado); /* Detalle amarillo/dorado en las tarjetas */
+    }
+
+    .feature h3 {
+      color: var(--color-verde-oscuro);
+      border-bottom: 2px solid var(--color-fondo-claro);
+      padding-bottom: 0.5em;
+      margin-top: 0;
+    }
+
+    /* --- ESTILOS DE CONTACTO (Alineación y logos) --- */
+    #contacto p img {
+      width: 24px; /* Tamaño más adecuado para iconos en línea */
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .contact-info a {
+        color: var(--color-verde-oscuro);
+        text-decoration: underline;
+    }
+
+    /* --- ESTILOS DEL FOOTER --- */
+    footer {
+      background-color: var(--color-verde-extra-oscuro);
+      color: white;
+      text-align: center;
+      padding: 2em 1em;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: var(--color-celeste-agua);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+        color: white;
+    }
+
+    /* --- RESPONSIVIDAD --- */
+    @media (max-width: 768px) {
+        .encabezado {
+            padding: 0.5em 1em;
+        }
+        .nav-links {
+            /* Espaciado más compacto en tabletas */
+            gap: 1.5em;
+        }
+        .logo-home {
+            height: 35px; /* Icono más pequeño en tabletas */
+        }
+    }
+
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 2em;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        /* Ocultar el logo en el nav bar si la pantalla es muy pequeña para maximizar espacio para los enlaces */
+        .logo-home {
+            display: none;
+        }
+        /* Ajustar el padding-top para cuando el nav es más pequeño */
+        body {
+            padding-top: 4em;
+        }
+
+        /* Ajuste para que los enlaces de navegación se espacien uniformemente cuando no hay logo */
+        .encabezado {
+            justify-content: center; /* Centra los enlaces si el logo está oculto */
+        }
+        .nav-links {
+            justify-content: space-around; /* Distribuye el espacio entre los 3 enlaces */
+            width: 100%;
+            gap: 0; /* Elimina el gap para usar space-around */
+        }
+    }
